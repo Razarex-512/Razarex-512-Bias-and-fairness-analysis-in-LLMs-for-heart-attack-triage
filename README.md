@@ -1,0 +1,2 @@
+# Razarex-512-Bias-and-fairness-analysis-in-LLMs-for-heart-attack-triage
+This repository contains the code and experimental setup used in a research paper evaluating fairness in lightweight open-source language models for clinical chest pain triage. Using counterfactual vignette-based testing, the project analyzes demographic disparities in triage decisions across multiple models under controlled conditions.
