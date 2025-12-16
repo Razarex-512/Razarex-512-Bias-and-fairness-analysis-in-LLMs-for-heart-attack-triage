@@ -1,0 +1,48 @@
+Project structure:
+
+├── src/
+│ ├── config.py # Paths, constants, and model configuration
+│ ├── run_experiments.py # Single-model experiment runner
+│ ├── run_multi_model.py # Multi-model experiment pipeline
+│ ├── llm_runner_multi.py # Model loading and inference logic
+│ └── analysis.py # Metric computation and fairness analysis
+├── data/
+│ └── vignettes.csv # Controlled clinical vignettes
+├── results/
+│ ├── *_outputs.csv # Model-specific outputs
+│ ├── combined_metrics.csv # Aggregated fairness metrics
+│ └── charts/ # Generated plots
+├── requirements.txt
+└── README.md
+---
+
+## Setup Instructions
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd <repository-name>
+
+Create and activate a virtual environment:
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+
+Install dependencies:
+pip install -r requirements.txt
+
+Running experiments:
+Single model:
+python -m src.run_experiments
+
+multimodel:
+python -m src.run_multi_model --models all
+
+To ensure reproducibility:
+- All prompts are fixed
+- All vignettes are deterministic
+- Models are evaluated using identical inputs
+- Outputs are logged for verification
+Experiments were run locally on consumer-grade hardware.
+
+This codebase supports the empirical findings presented in the accompanying research paper.
+All reported metrics, figures, and subgroup analyses are derivered directly from the scripts in this repository.
